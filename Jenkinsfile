@@ -20,7 +20,7 @@ pipeline {
             steps {
                 script {
                     // Installing dependencies
-                    sh 'npm install'
+                    bat 'npm install'
                 }
             }
         }
@@ -29,7 +29,7 @@ pipeline {
             steps {
                 script {
                     // Running the build command
-                    sh 'npm run build'
+                    bat 'npm run build'
                 }
             }
         }
