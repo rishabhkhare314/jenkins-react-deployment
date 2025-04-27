@@ -16,17 +16,23 @@ pipeline {
             }
         }
 
-    // stage('Build Application') {
-    //         steps {
-    //             sh '''
-    //                 # Example for a Node.js project
-    //                 echo "Building the application..."
-    //                 npm install
-    //                 npm run build
-    //             '''
-    //             // For Java Maven project, it would be: mvn clean install
-    //         }
-    //     }
+        stage('Install Dependencies') {
+            steps {
+                script {
+                    // Installing dependencies
+                    sh 'npm install'
+                }
+            }
+        }
+
+        stage('Build React App') {
+            steps {
+                script {
+                    // Running the build command
+                    sh 'npm run build'
+                }
+            }
+        }
     }
 }
 
