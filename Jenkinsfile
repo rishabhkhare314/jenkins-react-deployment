@@ -4,10 +4,10 @@
 pipeline {
     agent any
 
-    environment {
-        IMAGE_NAME = "your-docker-image-name"
-        DOCKERHUB_CREDENTIALS_ID = "your-dockerhub-credentials-id"
-    }
+    // environment {
+    //     IMAGE_NAME = "your-docker-image-name"
+    //     DOCKERHUB_CREDENTIALS_ID = "your-dockerhub-credentials-id"
+    // }
 
     stages {
         stage('Pull Code from Git') {
@@ -16,17 +16,17 @@ pipeline {
             }
         }
 
-    stage('Build Application') {
-            steps {
-                sh '''
-                    # Example for a Node.js project
-                    echo "Building the application..."
-                    npm install
-                    npm run build
-                '''
-                // For Java Maven project, it would be: mvn clean install
-            }
-        }
+    // stage('Build Application') {
+    //         steps {
+    //             sh '''
+    //                 # Example for a Node.js project
+    //                 echo "Building the application..."
+    //                 npm install
+    //                 npm run build
+    //             '''
+    //             // For Java Maven project, it would be: mvn clean install
+    //         }
+    //     }
     }
 }
 
