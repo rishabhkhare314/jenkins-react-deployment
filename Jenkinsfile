@@ -5,20 +5,28 @@ pipeline {
         nodejs '20.4.2'
     }
 
-    steps {
-        step("VERSIONS") {
-            echo "SHOW VERSIONS............."
-            bat "npm version"
+    stages {
+        stage("VERSIONS") {
+            step{
+                echo "SHOW VERSIONS............."
+                bat "npm version"
+            }
+          
         }
 
-        step("INSTALL DEPENDENCIES") {
-            echo "SHOW VERSIONS............."
-            bat "npm install"
+        stage("INSTALL DEPENDENCIES") {
+            step {
+                echo "SHOW VERSIONS............."
+                bat "npm install"
+        }
         }
 
-        step("REACT BUILD") {
-           echo "SHOW VERSIONS............."
-            bat "npm run build"
+        stage("REACT BUILD") {
+            step {
+                echo "SHOW VERSIONS............."
+                bat "npm run build"
+            }
+          
         }
     }
 }
