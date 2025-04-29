@@ -60,6 +60,11 @@ pipeline {
         }
          stage('INSTALl DEPENDENCIES') {
             steps {
+                bat 'npm install'
+            }
+        }
+         stage('REACT BUILD') {
+            steps {
                 bat 'npm run build'
             }
         }
