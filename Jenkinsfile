@@ -59,5 +59,10 @@ pipeline {
             }
         }
     }
+      stage('INSTALl DEPENDENCIES') {
+            steps {
+                bat 'npm run build'
+            }
+        }
 
 }
