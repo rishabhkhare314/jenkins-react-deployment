@@ -55,7 +55,7 @@ pipeline {
     stages {
         stage('PRINT VERSOINS') {
             steps {
-                bat 'npmm versions'
+                bat 'npm version'
             }
         }
     }
