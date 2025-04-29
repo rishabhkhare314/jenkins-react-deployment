@@ -58,11 +58,12 @@ pipeline {
                 bat 'npm version'
             }
         }
-    }
-      stage('INSTALl DEPENDENCIES') {
+         stage('INSTALl DEPENDENCIES') {
             steps {
                 bat 'npm run build'
             }
         }
+    }
+     
 
 }
