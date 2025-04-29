@@ -5,6 +5,7 @@ pipeline {
         stage("VERSIONS") {
             steps{
                 echo "SHOW VERSIONS............."
+                echo "SECRET:::::::::::::::::::::$SECRET_TEXT"
                 bat "npm version"
             }
           
