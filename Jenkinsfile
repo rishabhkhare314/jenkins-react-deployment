@@ -7,7 +7,7 @@ pipeline {
 
     stages {
         stage("VERSIONS") {
-            step{
+            steps{
                 echo "SHOW VERSIONS............."
                 bat "npm version"
             }
@@ -15,14 +15,14 @@ pipeline {
         }
 
         stage("INSTALL DEPENDENCIES") {
-            step {
+            steps {
                 echo "SHOW VERSIONS............."
                 bat "npm install"
         }
         }
 
         stage("REACT BUILD") {
-            step {
+            steps {
                 echo "SHOW VERSIONS............."
                 bat "npm run build"
             }
