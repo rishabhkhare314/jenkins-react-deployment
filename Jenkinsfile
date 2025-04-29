@@ -1,11 +1,15 @@
 pipeline {
     agent any
 
+    environment {
+        secret = credentials('SECRET_TEXT')
+    }
+
     stages {
         stage("VERSIONS") {
             steps{
                 echo "SHOW VERSIONS............."
-                echo "SECRET:::::::::::::::::::::$SECRET_TEXT"
+                echo "SECRET:::::::::::::::::::::$secret"
                 bat "npm version"
             }
           
