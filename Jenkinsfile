@@ -69,6 +69,9 @@
 pipeline {
     agent any
 
+    tools {
+        nodejs "NodeJS 18"
+    }
     environment {
         secretToken = credentials("SECRET_TEXT")
     }
