@@ -74,6 +74,11 @@ pipeline {
     }
 
     stages {
+        stage("NPM VERSION") {
+            steps {
+                echo 'npm version'
+            }
+        }
         stage("CHECKOUT") {
             steps {
                 echo "CHECKOUT............."
