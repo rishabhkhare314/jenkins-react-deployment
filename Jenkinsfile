@@ -82,11 +82,13 @@ pipeline {
         stage("INSTALL DEPENDENCIES") {
               steps {
                 echo "INSTALL...DEPENDENCIES"
+                bat 'npm install'
             }
         }
         stage("BUILD APP") {
               steps {
                 echo "BUILD APPLICATIONS...."
+                bat 'npm run build'
               }
             }
         stage("GET SECRET CREDENTAILS") {
@@ -97,6 +99,7 @@ pipeline {
         stage("RUN APPLICATION") {
               steps {
                  echo "RUN APPLCATIONS"
+                 
             }
         }
     }
