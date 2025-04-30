@@ -69,6 +69,10 @@
 pipeline {
     agent any
 
+    environment {
+        secretToken = credentials("SECRET_TEXT")
+    }
+
     stages {
         stage("CHECKOUT") {
             steps {
@@ -87,7 +91,7 @@ pipeline {
             }
         stage("GET SECRET CREDENTAILS") {
               steps {
-                echo "ACCESS JENKINS SECRET"
+                echo "ACCESS JENKINS SECRET $secretToken ......." 
               }
             }
         stage("RUN APPLICATION") {
