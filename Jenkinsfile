@@ -71,20 +71,29 @@ pipeline {
 
     stages {
         stage("CHECKOUT") {
-            echo "CHECKOUT............."
+            steps {
+                echo "CHECKOUT............."
+            }
         }
         stage("INSTALL DEPENDENCIES") {
-            echo "INSTALL...DEPENDENCIES"
-
+              steps {
+                echo "INSTALL...DEPENDENCIES"
+            }
         }
         stage("BUILD APP") {
-            echo "BUILD APPLICATIONS...."
-        }
+              steps {
+                echo "BUILD APPLICATIONS...."
+              }
+            }
         stage("GET SECRET CREDENTAILS") {
-            echo "ACCESS JENKINS SECRET"
-        }
+              steps {
+                echo "ACCESS JENKINS SECRET"
+              }
+            }
         stage("RUN APPLICATION") {
-            echo "RUN APPLCATIONS"
+              steps {
+                 echo "RUN APPLCATIONS"
+            }
         }
     }
  
