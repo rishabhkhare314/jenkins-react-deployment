@@ -94,13 +94,19 @@ pipeline {
         }
        stage("BUILD DOckER IMAGE") {
         steps {
+            script {
                         docker.build("DOCKER_IMAGE}:${DOKCER_TAG}")
+
+            }
 
         }
        }
        stage("RUN DOCKER CONAINER") {
         steps {
+            script {
             docker.image("${DOCKER_IMAGE}:${DOCKER_TAG}").run('-d -p 3000:3000')
+
+            }
         }
 
        }
