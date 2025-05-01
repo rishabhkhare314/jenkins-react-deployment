@@ -74,6 +74,8 @@ pipeline {
     }
     environment {
         secretToken = credentials("SECRET_TEXT")
+        DOCKER_IMAGE = "react-app-image"
+        DOKCER_TAG = "latest"
     }
 
     stages {
@@ -90,11 +92,18 @@ pipeline {
                 checkout scm
             }
         }
-        stage("CHECKOUT") {
-            steps {
-                echo "CHECKOUT............."
-            }
+       stage("BUILD DOckER IMAGE") {
+        steps {
+                        docker.build("DOCKER_IMAGE}:${DOKCER_TAG}")
+
         }
+       }
+       stage("RUN DOCKER CONAINER") {
+        steps {
+            docker.image("${DOCKER_IMAGE}:${DOCKER_TAG}").run('-d -p 3000:3000')
+        }
+
+       }
         stage("INSTALL DEPENDENCIES") {
               steps {
                 echo "INSTALL...DEPENDENCIES"
