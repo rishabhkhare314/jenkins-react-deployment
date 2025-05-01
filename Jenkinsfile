@@ -111,6 +111,7 @@ pipeline {
                  
             }
         }
+        }
 
         post {
             success {
@@ -122,7 +123,6 @@ pipeline {
             always {
                 echo "Pipeline always runs"
             }
-        }
     }
  
 }
