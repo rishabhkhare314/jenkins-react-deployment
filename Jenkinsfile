@@ -83,6 +83,13 @@ pipeline {
                 bat 'npm version'
             }
         }
+
+        stage("CHECKOCUT") {
+            steps {
+                echo "CHECKOUT CODE FDROM GIT REPOSITORY"
+                checkout scm
+            }
+        }
         stage("CHECKOUT") {
             steps {
                 echo "CHECKOUT............."
