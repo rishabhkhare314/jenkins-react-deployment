@@ -75,7 +75,7 @@ pipeline {
     environment {
         secretToken = credentials("SECRET_TEXT")
         DOCKER_IMAGE = "react-app-image"
-        DOKCER_TAG = "latest"
+        DOCKER_TAG = "latest"
     }
 
     stages {
@@ -95,7 +95,7 @@ pipeline {
        stage("BUILD DOckER IMAGE") {
         steps {
             script {
-                        docker.build("DOCKER_IMAGE}:${DOKCER_TAG}")
+                        docker.build("DOCKER_IMAGE}:${DOCKER_TAG}")
 
             }
 
